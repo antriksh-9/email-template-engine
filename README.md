@@ -149,7 +149,7 @@ public class NotificationService {
 #### 🔹 Create a controller to trigger the email rendering
 Basic Usage:
 ``` java
-package com.jws_app.controller;
+package com.yourcompany.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
