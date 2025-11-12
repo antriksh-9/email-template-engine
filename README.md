@@ -68,17 +68,25 @@ Download the latest version: [email-template-engine-0.0.1.jar](https://github.co
 
 ### Step 2: Install to Local Maven Repository
 
-`mvn install:install-file
+```
+mvn install:install-file
 -Dfile=/path/to/downloaded/email-template-engine-0.0.1-SNAPSHOT.jar
 -DgroupId=com.email_template_engine
 -DartifactId=email-template-engine
 -Dversion=0.0.1-SNAPSHOT
--Dpackaging=jar`
+-Dpackaging=jar
+```
 
 
 ### Step 3: Add to Your Project
 In your project's `pom.xml`:
-`<dependency> <groupId>com.email_template_engine</groupId> <artifactId>email-template-engine</artifactId> <version>0.0.1-SNAPSHOT</version> </dependency> `
+```
+<dependency>
+    <groupId>com.email_template_engine</groupId>
+    <artifactId>email-template-engine</artifactId>
+    <version>0.0.1-SNAPSHOT</version> 
+</dependency>
+```
 
 ### Step 4: Use in Your Application
 Basic Usage
