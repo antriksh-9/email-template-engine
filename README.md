@@ -2,6 +2,18 @@
 
 A powerful, multi-language email template rendering microservice built with Spring Boot. Supports multiple template engines (Thymeleaf, FreeMarker, Velocity) and provides easy integration as a reusable JAR library.
 
+## 📋 Table of Contents
+
+- [Features](#-features)
+- [What Does It Provide?](#-what-does-it-provide)
+- [Template Library](#-template-library)
+- [Using as a JAR Library](#-using-as-a-jar-library)
+- [API Documentation](#-api-documentation)
+- [Adding Custom Templates](#-adding-custom-templates)
+- [Testing](#-testing)
+
+---
+
 ## 🌟 Features
 
 - **Multi-Engine Support**: Thymeleaf, FreeMarker, and Velocity template engines
@@ -10,17 +22,6 @@ A powerful, multi-language email template rendering microservice built with Spri
 - **Reusable Component**: Use as a JAR dependency in any Spring Boot application
 - **Rich Templates**: Pre-built templates for common use cases
 - **Customizable**: Add your own templates and variables
-
-## 📋 Table of Contents
-
-- [What Does It Provide?](#what-does-it-provide)
-- [Template Library](#template-library)
-- [Using as a JAR Library](#using-as-a-jar-library)
-- [API Documentation](#api-documentation)
-- [Adding Custom Templates](#adding-custom-templates)
-- [Testing](#testing)
-
----
 
 ## 🎯 What Does It Provide?
 
