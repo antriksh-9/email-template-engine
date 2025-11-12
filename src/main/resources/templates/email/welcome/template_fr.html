@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email de Bienvenue</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .content {
+            padding: 30px 20px;
+            color: #333333;
+            line-height: 1.6;
+        }
+        .content p {
+            margin: 15px 0;
+        }
+        .discount-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .discount-box strong {
+            color: #856404;
+            font-size: 18px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Bienvenue !</h1>
+        </div>
+        <div class="content">
+            <p>Cher/Chère <strong th:text="${userName}">Utilisateur</strong>,</p>
+            
+            <p>Merci de nous avoir rejoints ! Nous sommes ravis de vous accueillir dans notre communauté.</p>
+            
+            <p>Chez <span th:text="${companyName}">Notre Entreprise</span>, nous nous engageons à vous offrir la meilleure expérience possible.</p>
+            
+            <div th:if="${hasDiscount}" class="discount-box">
+                <p>🎉 <strong>Offre spéciale de bienvenue !</strong></p>
+                <p>Utilisez le code : <strong th:text="${discountCode}">WELCOME20</strong></p>
+            </div>
+            
+            <p>Pour commencer, veuillez activer votre compte en cliquant sur le bouton ci-dessous :</p>
+            
+            <a th:href="${activationLink}" class="button">Activer mon compte</a>
+            
+            <p>Si le bouton ne fonctionne pas, copiez et collez ce lien dans votre navigateur :</p>
+            <p style="word-break: break-all; color: #007bff;"><span th:text="${activationLink}">https://example.com/activate</span></p>
+        </div>
+        <div class="footer">
+            <p>Cordialement,</p>
+            <p><strong th:text="${companyName}">Notre Entreprise</strong></p>
+            <p>© 2025 Tous droits réservés</p>
+        </div>
+    </div>
+</body>
+</html>

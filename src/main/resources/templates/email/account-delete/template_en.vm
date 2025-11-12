@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Account Deletion Warning</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #fff5f5;}
+        .container { max-width: 600px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(200,0,0,.09);}
+        .header { background: #e53935; color: #fff; padding: 28px 20px; border-radius: 8px 8px 0 0; }
+        .content { padding: 36px 22px; }
+        .footer { background: #f9f9f9; color: #888; text-align: center; font-size: 13px; padding: 18px; border-radius: 0 0 8px 8px; }
+        .btn { background: #e53935; color: #fff; padding: 12px 30px; border-radius: 6px; text-decoration: none; margin-top: 20px; display: inline-block;}
+        .highlight { color: #c62828; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Account Deletion Scheduled</h1>
+        </div>
+        <div class="content">
+            <p>Hello <strong>${userName}</strong>,</p>
+            <p>Your account at <strong>${companyName}</strong> is scheduled for deletion on <b>${deleteDate}</b>.</p>
+            <p>If you wish to keep your account, please click the button below:</p>
+            <a class="btn" href="${reactivationLink}">Keep My Account</a>
+            <p style="margin-top:25px">If you do not act before <span class="highlight">${deleteDate}</span>, your account and all data will be permanently deleted.</p>
+        </div>
+        <div class="footer">
+            If you did not request this, please <a href="${supportLink}">contact support</a> immediately.<br>
+            &copy; 2025 ${companyName}
+        </div>
+    </div>
+</body>
+</html>

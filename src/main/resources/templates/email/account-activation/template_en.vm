@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Activation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 40px 30px;
+            color: #333;
+            line-height: 1.8;
+        }
+        .activation-code {
+            background-color: #f8f9fa;
+            border: 2px dashed #667eea;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin: 25px 0;
+        }
+        .activation-code .code {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+            letter-spacing: 2px;
+            font-family: 'Courier New', monospace;
+        }
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 20px 0;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        .button:hover {
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        .steps {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .steps ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .steps li {
+            margin: 10px 0;
+        }
+        .expiry-notice {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 25px 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>✅ Activate Your Account</h1>
+            <p>You're almost there!</p>
+        </div>
+        <div class="content">
+            <p>Hello <strong>${userName}</strong>,</p>
+            
+            <p>Welcome to <strong>${companyName}</strong>! We're excited to have you on board.</p>
+            
+            <p>To complete your registration and activate your account, please use the activation code below or click the button:</p>
+            
+            <div class="activation-code">
+                <p style="margin: 0 0 10px 0; color: #666;">Your Activation Code:</p>
+                <div class="code">${activationCode}</div>
+            </div>
+            
+            <center>
+                <a href="${activationLink}" class="button">🚀 Activate My Account</a>
+            </center>
+            
+            <div class="steps">
+                <p><strong>Alternative Activation Method:</strong></p>
+                <ol>
+                    <li>Visit your account settings page</li>
+                    <li>Enter the activation code: <strong>${activationCode}</strong></li>
+                    <li>Click "Activate Account"</li>
+                </ol>
+            </div>
+            
+            <div class="expiry-notice">
+                <p><strong>⏰ Time Sensitive:</strong> This activation link and code will expire in <strong>${expiryDays} days</strong>.</p>
+            </div>
+            
+            <p>If you didn't create an account with ${companyName}, please ignore this email.</p>
+            
+            <p>If the button above doesn't work, copy and paste this URL into your browser:</p>
+            <p style="word-break: break-all; color: #667eea; font-size: 12px;">${activationLink}</p>
+        </div>
+        <div class="footer">
+            <p>Thank you for choosing <strong>${companyName}</strong></p>
+            <p>© 2025 All rights reserved</p>
+            <p style="margin-top: 15px;">
+                <a href="#" style="color: #667eea; text-decoration: none; margin: 0 10px;">Help Center</a> |
+                <a href="#" style="color: #667eea; text-decoration: none; margin: 0 10px;">Contact Us</a> |
+                <a href="#" style="color: #667eea; text-decoration: none; margin: 0 10px;">Privacy Policy</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

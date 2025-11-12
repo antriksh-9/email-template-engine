@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: email-template-engine
+  
+  # Thymeleaf Configuration (CRITICAL - This was missing!)
+  thymeleaf:
+    cache: false              # Set to true in production
+    mode: HTML                # ✅ Force HTML mode
+    encoding: UTF-8
+    prefix: classpath:/templates/
+    suffix: .html
+    check-template-location: true
+  
+  # FreeMarker Configuration
+  freemarker:
+    cache: false              # Set to true in production
+    charset: UTF-8
+    content-type: text/html
+    suffix: .ftl
+    template-loader-path: classpath:/templates/
+    check-template-location: true
+
+# Microservice Configuration
+email:
+  template:
+    microservice:
+      enabled: true
+    cache:
+      enabled: false          # Set to true in production
+    supported-locales: en,es,fr
+    default-locale: en
+
+# Server Configuration
+server:
+  port: 8085
+  shutdown: graceful
+
+# Management Endpoints (for monitoring)
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: always
+
+# Logging
+logging:
+  level:
+    root: INFO
+    com.email_template_engine: DEBUG    # ✅ Fixed package name
+    org.springframework.web: DEBUG
+    org.thymeleaf: DEBUG                # ✅ Add Thymeleaf logging
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %logger{36} - %msg%n"

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Email</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .content {
+            padding: 30px 20px;
+            color: #333333;
+            line-height: 1.6;
+        }
+        .discount-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome!</h1>
+        </div>
+        <div class="content">
+            <p>Dear <strong th:text="${userName}">User</strong>,</p>
+            
+            <p>Thank you for joining us! We're excited to have you on board.</p>
+            
+            <p>At <span th:text="${companyName}">Our Company</span>, we're committed to providing you with the best experience possible.</p>
+            
+            <div th:if="${hasDiscount}" class="discount-box">
+                <p>🎉 <strong>Special Welcome Offer!</strong></p>
+                <p>Use code: <strong th:text="${discountCode}">WELCOME20</strong></p>
+            </div>
+            
+            <p>To get started, please activate your account by clicking the button below:</p>
+            
+            <a th:href="${activationLink}" class="button">Activate My Account</a>
+            
+            <p>If the button doesn't work, copy and paste this link into your browser:</p>
+            <p style="word-break: break-all; color: #007bff;"><span th:text="${activationLink}">https://example.com/activate</span></p>
+        </div>
+        <div class="footer">
+            <p>Best regards,</p>
+            <p><strong th:text="${companyName}">Our Company</strong></p>
+            <p>© 2025 All rights reserved</p>
+        </div>
+    </div>
+</body>
+</html>
