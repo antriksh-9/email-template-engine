@@ -69,7 +69,7 @@ Download the latest version: [email-template-engine-0.0.1.jar](https://github.co
 
 ### Step 2: Install to Local Maven Repository
 
-```
+``` console
 mvn install:install-file
 -Dfile=/path/to/downloaded/email-template-engine-0.0.1-SNAPSHOT.jar
 -DgroupId=com.email_template_engine
@@ -81,7 +81,7 @@ mvn install:install-file
 
 ### Step 3: Add to Your Project
 In your project's `pom.xml`:
-```
+``` xml
 <dependency>
     <groupId>com.email_template_engine</groupId>
     <artifactId>email-template-engine</artifactId>
@@ -92,7 +92,7 @@ In your project's `pom.xml`:
 ### Step 4: Use in Your Application
 Basic Usage
 
-```
+``` java
 package com.yourcompany.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
