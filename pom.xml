@@ -8,24 +8,34 @@
 		<version>3.5.7</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.emailtemplate</groupId>
+	<groupId>com.email_template_engine</groupId>
 	<artifactId>email-template-engine</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>email-template-engine</name>
-	<description>Reusable email template engine with multi-language support</description>
-	<url/>
+	<packaging>jar</packaging>
+	<name>Email Template Engine</name>
+	<description>Multi-engine email template rendering library</description>
+
+	<url>https://github.com/antriksh-9/email-template-engine</url>
+
 	<licenses>
-		<license/>
+		<license>
+			<name>MIT License</name>
+			<url>https://opensource.org/licenses/MIT</url>
+		</license>
 	</licenses>
-	<developers>
-		<developer/>
-	</developers>
+
+    <developers>
+        <developer>
+            <id>antriksh</id>
+            <name>Antriksh</name>
+            <email>antriksh.scin9@gmail.com</email> 
+        </developer>
+    </developers>
 	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
+        <connection>scm:git:git://github.com/antriksh-9/email-template-engine.git</connection>
+        <developerConnection>scm:git:ssh://github.com:antriksh-9/email-template-engine.git</developerConnection>
+        <url>https://github.com/antriksh-9/email-template-engine/tree/main</url>
+    </scm>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -89,6 +99,14 @@
 	</dependencies>
 
 	<build>
+	    <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+        </resources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -110,6 +128,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<classifier>exec</classifier>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
