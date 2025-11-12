@@ -69,12 +69,12 @@ Download the latest version: [email-template-engine-0.0.1.jar](https://github.co
 
 ### Step 2: Install to Local Maven Repository
 
-``` console
-mvn install:install-file
--Dfile=/path/to/downloaded/email-template-engine-0.0.1-SNAPSHOT.jar
--DgroupId=com.email_template_engine
--DartifactId=email-template-engine
--Dversion=0.0.1-SNAPSHOT
+``` bash
+mvn install:install-file \
+-Dfile=/path/to/downloaded/email-template-engine-0.0.1-SNAPSHOT.jar \
+-DgroupId=com.email_template_engine \
+-DartifactId=email-template-engine \
+-Dversion=0.0.1-SNAPSHOT \
 -Dpackaging=jar
 ```
 
@@ -89,8 +89,16 @@ In your project's `pom.xml`:
 </dependency>
 ```
 
-### Step 4: Use in Your Application
-Basic Usage
+### Step 4: Confirm integration is successful
+Run this inside your app folder:
+``` 
+mvn clean compile 
+```
+<br>
+✅ If it compiles successfully — your `pom.xml` dependency and the `.jar` you installed locally are linked correctly.
+
+### Step 5: Use in Your Application
+Basic Usage:
 
 ``` java
 package com.yourcompany.service;
@@ -132,11 +140,44 @@ public class NotificationService {
         EmailTemplate result = emailTemplateService.renderEmailTemplate(context);
         
         // Get the HTML content
-        String htmlContent = result.getHtmlContent();
+        return result.getHtmlContent();
         
     }
 }
 ```
+
+#### 🔹 Create a controller to trigger the email rendering
+Basic Usage:
+``` java
+package com.jws_app.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import com.jws_app.service.NotificationService;
+
+@RestController
+@RequestMapping("/notify")
+public class NotificationController {
+
+    @Autowired
+    private NotificationService notificationService;
+
+    @GetMapping("/welcome")
+    public String sendWelcomeEmail(@RequestParam String name, @RequestParam String email) {
+        return notificationService.sendWelcomeEmail(name, email);
+    }
+}
+```
+
+### NOTE: Now, we need to include the Jar Package in the scan! 
+``` java
+@SpringBootApplication(scanBasePackages = {
+    "com.your-app",  // ✅ ADD THIS - Your own package!
+    "com.email_template_engine"     // ✅ The JAR package
+})
+```
+
+
 ## 📖 API Documentation
 
 [View API Documentation in Postman](https://documenter.getpostman.com/view/29968557/2sB3Wtsz3W)
@@ -207,6 +248,8 @@ This project includes comprehensive test coverage with **60+ test cases** coveri
 ✅ Should render Thymeleaf template in English <br>
 ✅ Should render Thymeleaf template in Spanish<br>
 ✅ Should render Thymeleaf template in French <br>
+
+---
 
 #### 2. FreeMarker Template Tests
 
