@@ -145,7 +145,8 @@ public class NotificationService {
 ## 🎨 Adding Custom Templates
 
 ### Step 1: Create Template Folder Structure
-```
+
+``` 
 src/main/resources/templates/email/
 └── your-template-name/
     ├── template_en.html   (Thymeleaf)
@@ -156,7 +157,7 @@ src/main/resources/templates/email/
 ### Step 2: Create Template File
 Example: `templates/email/custom-welcome/template_en.html`
 
-```
+``` xml
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -171,7 +172,7 @@ Example: `templates/email/custom-welcome/template_en.html`
 ```
 ### Step 3: Use Your Template
 
-```
+``` java
 TemplateContext context = TemplateContext.builder()
     .templateName("custom-welcome")  // Matches folder name
     .templateType(TemplateType.THYMELEAF)
