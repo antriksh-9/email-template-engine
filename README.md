@@ -95,7 +95,7 @@ Run this inside your app folder:
 mvn clean compile 
 ```
 <br>
-✅ If it compiles successfully — your `pom.xml` dependency and the `.jar` you installed locally are linked correctly.
+✅ If it compiles successfully — your pom.xml dependency and the .jar you installed locally are linked correctly.
 
 ### Step 5: Use in Your Application
 Basic Usage:
