@@ -67,9 +67,14 @@ Use this library when you need consistent, professional email designs across you
 ### Step 1: Download the JAR
 Download the latest version: [email-template-engine-0.0.1.jar](https://github.com/antriksh-9/email-template-engine/releases/download/v0.0.1/email-template-engine-0.0.1-SNAPSHOT.jar)
 
-### Step 2: Install to libs folder
+### Steps 2: Create the libs folder: 
+``` 
+mkdir -p libs
+```
 
-``` bash
+### Step 3: Install jar to the libs folder
+
+``` console
 mvn install:install-file \
 -Dfile=libs/email-template-engine-0.0.1-SNAPSHOT.jar \
 -DgroupId=com.email_template_engine \
@@ -80,7 +85,7 @@ mvn install:install-file \
 ```
 
 
-### Step 3: Add to Your Project
+### Step 4: Add to Your Project
 In your project's `pom.xml`:
 ``` xml
 <repositories>
@@ -98,7 +103,7 @@ In your project's `pom.xml`:
 </dependency>
 ```
 
-### Step 4: Confirm integration is successful
+### Step 5: Confirm integration is successful
 Run this inside your app folder:
 ``` 
 mvn clean compile 
@@ -106,7 +111,7 @@ mvn clean compile
 <br>
 ✅ If it compiles successfully — your pom.xml dependency and the .jar you installed locally are linked correctly.
 
-### Step 5: Use in Your Application
+### Step 6: Use in Your Application
 Basic Usage:
 
 ``` java
