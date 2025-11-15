@@ -67,20 +67,29 @@ Use this library when you need consistent, professional email designs across you
 ### Step 1: Download the JAR
 Download the latest version: [email-template-engine-0.0.1.jar](https://github.com/antriksh-9/email-template-engine/releases/download/v0.0.1/email-template-engine-0.0.1-SNAPSHOT.jar)
 
-### Step 2: Install to Local Maven Repository
+### Step 2: Install to libs folder
 
 ``` bash
 mvn install:install-file \
--Dfile=/path/to/downloaded/email-template-engine-0.0.1-SNAPSHOT.jar \
+-Dfile=libs/email-template-engine-0.0.1-SNAPSHOT.jar \
 -DgroupId=com.email_template_engine \
 -DartifactId=email-template-engine \
 -Dversion=0.0.1-SNAPSHOT \
--Dpackaging=jar
+-Dpackaging=jar \
+-DlocalRepositoryPath=libs
 ```
 
 
 ### Step 3: Add to Your Project
 In your project's `pom.xml`:
+``` xml
+<repositories>
+    <repository>
+        <id>local-libs</id>
+        <url>file://${project.basedir}/libs</url>
+    </repository>
+</repositories>
+```
 ``` xml
 <dependency>
     <groupId>com.email_template_engine</groupId>
